@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    private CharacterController controller;
+    public Rigidbody2D rb;
     private int hor_input = 0;
     private int ver_input = 0;
     private float playerSpeed = 6.0f;
@@ -12,7 +12,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Start()
     {
-        controller = gameObject.AddComponent<CharacterController>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -33,9 +33,14 @@ public class PlayerMove : MonoBehaviour
         }
         Vector3 move = new Vector3(hor_input, ver_input, 0);
         if (Input.GetKey("space")) {
-            controller.Move(move * Time.deltaTime * playerSprintSpeed);
+            
+            //transform.Translate(move*Time.deltaTime*playerSprintSpeed);
+            rb.velocity = move*playerSprintSpeed;
+            //GetComponent<Rigidbody2D>().MovePosition(transform.position + move * Time.deltaTime * playerSprintSpeed);
         } else {
-            controller.Move(move * Time.deltaTime * playerSpeed);
+            rb.velocity = move*playerSpeed;
+            //transform.Translate(move*Time.deltaTime*playerSpeed);
+            //GetComponent<Rigidbody2D>().MovePosition(transform.position + move * Time.deltaTime * playerSpeed);
         }
     }
 }
