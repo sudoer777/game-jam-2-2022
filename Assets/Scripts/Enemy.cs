@@ -2,23 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
-    public float lifespan = 0;
-    public Rigidbody2D rb;
-    // Start is called before the first frame update
+    [SerializeField] public float hp;
 
-    private void Awake()
+    protected Rigidbody2D rb;
+
+    public virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    /*public void Awake() 
-    {
+
+    public virtual void Update() {
+        //Debug.Log(hp);
     }
 
-    // Update is called once per frame
-    public void Update() {
-
-    }*/
+    public virtual void OnHit(int damage) {
+        Debug.Log(hp);
+        hp -= damage;
+        if (hp <= 0) {
+            Destroy(this.gameObject);
+        }
+    }
 
 }

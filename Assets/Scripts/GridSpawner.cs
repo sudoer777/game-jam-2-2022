@@ -5,9 +5,10 @@ using UnityEngine;
 public class GridSpawner : MonoBehaviour
 {
 
-    public GameObject floor_tile;
+    public GameObject wall;
     public GameObject player;
     public GameObject enemy;
+    private GameObject tile;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class GridSpawner : MonoBehaviour
             "000000000001000",
             "000000001111110",
             "000000000001000",
-            "000000000001000",
+            "00000000E001000",
             "000000000001000",
             "000000000000000",
             "000000000000000",
@@ -35,14 +36,17 @@ public class GridSpawner : MonoBehaviour
         for (int i = 0; i < game2DArray.GetLength(0); i++) {
             for (int j = 0; j < game2DArray.GetLength(1); j++) {
                 if (game2DArray[i, j] == '1') {
-                    Instantiate(floor_tile, new Vector3(j+0.5f, 11.5f-i, 0f), Quaternion.identity);
+                    tile = wall;
                 } 
                 if (game2DArray[i, j] == 'P') {
-                    Instantiate(player, new Vector3(j+0.5f, 11.5f-i, 0f), Quaternion.identity);
+                    tile = player;
                 } 
                 if (game2DArray[i, j] == 'E') {
-                    Instantiate(enemy, new Vector3(j+0.5f, 11.5f-i, 0f), Quaternion.identity);
+                    tile = enemy;
                 } 
+                if (game2DArray[i, j] != '0') {
+                Instantiate(tile, new Vector3(j+0.5f, 11.5f-i, 0f), Quaternion.identity);
+                }
             }
         }
     }
