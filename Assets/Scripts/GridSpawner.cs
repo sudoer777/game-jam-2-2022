@@ -6,22 +6,24 @@ public class GridSpawner : MonoBehaviour
 {
 
     public GameObject floor_tile;
+    public GameObject player;
+    public GameObject enemy;
     // Start is called before the first frame update
     void Start()
     {
         string[] gameArray = new string[] {
-            "111110011010100",
-            "001110011010110",
-            "111110011010111",
-            "111110011010011",
-            "000000000000111",
-            "111110011010100",
-            "001110011010110",
-            "111110011010111",
-            "111110011010011",
-            "000000000000111",
-            "111110011010011",
-            "000000000000111",
+            "000000000000000",
+            "000000000000000",
+            "000000000001000",
+            "000P00000001000",
+            "000000000001000",
+            "000000001111110",
+            "000000000001000",
+            "000000000001000",
+            "000000000001000",
+            "000000000000000",
+            "000000000000000",
+            "000000000000000",
         };
         char[,] game2DArray = new char[gameArray.Length,gameArray[0].Length];
         for (int i = 0; i < gameArray.Length; i++) {
@@ -34,6 +36,12 @@ public class GridSpawner : MonoBehaviour
             for (int j = 0; j < game2DArray.GetLength(1); j++) {
                 if (game2DArray[i, j] == '1') {
                     Instantiate(floor_tile, new Vector3(j+0.5f, 11.5f-i, 0f), Quaternion.identity);
+                } 
+                if (game2DArray[i, j] == 'P') {
+                    Instantiate(player, new Vector3(j+0.5f, 11.5f-i, 0f), Quaternion.identity);
+                } 
+                if (game2DArray[i, j] == 'E') {
+                    Instantiate(enemy, new Vector3(j+0.5f, 11.5f-i, 0f), Quaternion.identity);
                 } 
             }
         }
