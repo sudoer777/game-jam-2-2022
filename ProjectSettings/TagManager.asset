@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -47,6 +48,9 @@ TagManager:
     locked: 0
   - name: Items
     uniqueID: 731875257
+    locked: 0
+  - name: Projectile
+    uniqueID: 2119013881
     locked: 0
   - name: Enemies
     uniqueID: 227846477
