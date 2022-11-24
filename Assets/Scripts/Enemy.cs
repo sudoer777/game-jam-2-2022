@@ -12,9 +12,8 @@ public abstract class Enemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
+    //this.GetComponent<Enemy>().hp = 20 is the way to set HP in a subclass
     public virtual void Update() {
-        //Debug.Log(hp);
     }
 
     public virtual void OnHit(int damage) {

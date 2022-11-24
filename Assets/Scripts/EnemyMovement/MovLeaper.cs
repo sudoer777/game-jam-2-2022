@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementLeaper : Enemy
+public class MovLeaper : Enemy
 {
     public int movespeed; 
     private float lifespan = 0;
