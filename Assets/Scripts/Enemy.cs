@@ -17,7 +17,6 @@ public abstract class Enemy : MonoBehaviour
     }
 
     public virtual void OnHit(int damage) {
-        Debug.Log(hp);
         hp -= damage;
         if (hp <= 0) {
             Destroy(this.gameObject);

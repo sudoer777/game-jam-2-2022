@@ -8,11 +8,12 @@ TagManager:
   - Projectile
   - Enemy
   - Wall
+  - Undefined
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ephemeral
   - Water
   - UI
   - Wall
