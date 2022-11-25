@@ -103,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 9211712681904927251, guid: 838089047367443bba3518976e1e83ba, type: 3}
   animator: {fileID: 4272068536929796473}
+  spriteRenderer: {fileID: 1125783377550435097}
   PlayerProjectile: {fileID: 9211712681904927252, guid: 838089047367443bba3518976e1e83ba, type: 3}
 --- !u!50 &1125783377550435111
 Rigidbody2D:

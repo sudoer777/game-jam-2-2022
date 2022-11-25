@@ -6,6 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Animator animator;
+    public SpriteRenderer spriteRenderer;
     private int hor_input = 0;
     private int ver_input = 0;
     private float actualSpeed = 6.0f;
@@ -85,6 +86,15 @@ public class PlayerMove : MonoBehaviour
         else
         {
             animator.Play("Idle");
+        }
+
+        if (Input.GetKey("a") && !Input.GetKey("d"))
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (Input.GetKey("d") && !Input.GetKey("a"))
+        {
+            spriteRenderer.flipX = false;   
         }
     }
 }
