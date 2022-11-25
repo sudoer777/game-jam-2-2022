@@ -3,17 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Floor
+  - Projectile
+  - Enemy
+  - Wall
+  - Undefined
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ephemeral
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Wall
+  - Object
+  - Floor
   - 
   - 
   - 
@@ -40,4 +45,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 981596207
+    locked: 0
+  - name: Items
+    uniqueID: 731875257
+    locked: 0
+  - name: Projectile
+    uniqueID: 2119013881
+    locked: 0
+  - name: Enemies
+    uniqueID: 227846477
+    locked: 0
+  - name: Player
+    uniqueID: 613898929
     locked: 0
