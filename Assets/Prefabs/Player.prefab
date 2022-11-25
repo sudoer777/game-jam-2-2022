@@ -102,6 +102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 9211712681904927251, guid: 838089047367443bba3518976e1e83ba, type: 3}
   PlayerProjectile: {fileID: 9211712681904927252, guid: 838089047367443bba3518976e1e83ba, type: 3}
+  staminaBar: {fileID: 2375889983475157575, guid: e6d468514651d402693bd329302c5078, type: 3}
+  c: {fileID: 8285193685575314606, guid: 3ef8388a436804570896f2a942f9cf4a, type: 3}
 --- !u!50 &1125783377550435111
 Rigidbody2D:
   serializedVersion: 4
@@ -161,3 +163,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5662d66cbf04242ce9b6c8e2af743cc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 5
+  iframes: 0

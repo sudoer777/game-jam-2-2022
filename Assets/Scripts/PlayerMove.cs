@@ -7,9 +7,13 @@ public class PlayerMove : MonoBehaviour
     public Rigidbody2D rb;
     private int hor_input = 0;
     private int ver_input = 0;
+    private float actualSpeed = 6.0f;
     private float playerSpeed = 6.0f;
     private float playerSprintSpeed = 12.0f;
+    private float stamina = 3.0f;
+    private float staminaCap = 3.0f;
     public Projectile PlayerProjectile;
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,13 +35,34 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey("s")) {
             ver_input--;
         }
+
         Vector3 move = new Vector3(hor_input, ver_input, 0);
-        if (Input.GetKey("space")) {
-            rb.velocity = move*playerSprintSpeed;
+
+        if (Input.GetKeyDown("space") && stamina > 0.5f) {
+            actualSpeed = playerSprintSpeed;
+            stamina -= Time.deltaTime;
         } else {
-            rb.velocity = move*playerSpeed;
+            if (!Input.GetKey("space") || stamina <= 0f) {
+                actualSpeed = playerSpeed;
+                if (stamina < staminaCap) {
+                    stamina += Time.deltaTime;
+                } 
+                if (stamina > staminaCap) {
+                    stamina = staminaCap;
+                }
+            } else {
+                if (actualSpeed != playerSpeed) {
+                    stamina -= Time.deltaTime;
+                } else {
+                    stamina += Time.deltaTime;
+                }
+            }
         }
-        if (Input.GetMouseButtonDown(1))
+        rb.velocity = move*actualSpeed;
+
+        StaminaBar.Instance.SetStamina(stamina/staminaCap);
+
+        if (Input.GetMouseButtonDown(0))
         {
             Vector3 mousePos = Input.mousePosition;
             Vector3 mouseRelPos = Camera.main.ScreenToWorldPoint(mousePos);
