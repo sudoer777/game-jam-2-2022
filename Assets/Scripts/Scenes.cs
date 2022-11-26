@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controller : MonoBehaviour
+public class Scenes : MonoBehaviour
 {
     
     // Start is called before the first frame update
@@ -20,5 +20,11 @@ public class Controller : MonoBehaviour
     public void PlayGame()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        Pause.ResumeGame(); 
+    }
+
+    public void MainMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu"); 
     }
 }
