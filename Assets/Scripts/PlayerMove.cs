@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
     private int hor_input = 0;
     private int ver_input = 0;
     private float actualSpeed = 6.0f;
@@ -12,6 +14,7 @@ public class PlayerMove : MonoBehaviour
     private float playerSprintSpeed = 12.0f;
     private float stamina = 3.0f;
     private float staminaCap = 3.0f;
+    private bool facingForward = false;
     public Projectile PlayerProjectile;
     
     private void Awake()
@@ -72,5 +75,33 @@ public class PlayerMove : MonoBehaviour
             var projectile = Instantiate(PlayerProjectile, transform.position+direction*0.4f, transform.rotation);
             projectile.Fire(playerProjectileSpeed, direction);
         }
+        
+        
+        if (Input.GetKey("a") || Input.GetKey("d"))
+        {
+            animator.Play("Walk");
+        }
+        else if (Input.GetKey("w"))
+        {
+            animator.Play("BackWalk");
+        }
+        else if (Input.GetKey("s"))
+        {
+            animator.Play("FrontWalk");
+        }
+        else
+        {
+            if (facingForward)
+            {
+                animator.Play("FrontIdle");
+            }
+            else
+            {
+                animator.Play("Idle");
+            }
+        }
+        
+        spriteRenderer.flipX = (Input.GetKey("a") && !Input.GetKey("d")) || (spriteRenderer.flipX && (Input.GetKey("a") && Input.GetKey("d") || !Input.GetKey("d")));
+        facingForward = Input.GetKey("s") || (facingForward && !Input.GetKey("a") && !Input.GetKey("w") && !Input.GetKey("d"));
     }
 }
