@@ -13,7 +13,10 @@ public class GridSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string[] gameArray = new string[] {
+        string [] gameArray = new string[] {
+            "P"
+        };
+        /*string[] gameArray = new string[] {
             "000000000000000",
             "00000000S000000",
             "000000000001000",
@@ -26,7 +29,7 @@ public class GridSpawner : MonoBehaviour
             "000000000000000",
             "000000000000000",
             "000000000000000",
-        };
+        };*/
         char[,] game2DArray = new char[gameArray.Length,gameArray[0].Length];
         for (int i = 0; i < gameArray.Length; i++) {
             char[] text = gameArray[i].ToCharArray();
