@@ -30,15 +30,12 @@ public class PlayerMove : MonoBehaviour
         } 
         if (Input.GetKey("d")) {
             hor_input++;
-            animator.Play("Walk");
         }
         if (Input.GetKey("w")) {
             ver_input++;
-            animator.Play("Walk");
         } 
         if (Input.GetKey("s")) {
             ver_input--;
-            animator.Play("Walk");
         }
 
         Vector3 move = new Vector3(hor_input, ver_input, 0);
@@ -79,9 +76,17 @@ public class PlayerMove : MonoBehaviour
         }
         
         
-        if (Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("w") || Input.GetKey("d"))
+        if (Input.GetKey("a") || Input.GetKey("d"))
         {
             animator.Play("Walk");
+        }
+        else if (Input.GetKey("w"))
+        {
+            animator.Play("BackWalk");
+        }
+        else if (Input.GetKey("s"))
+        {
+            animator.Play("FrontWalk");
         }
         else
         {
