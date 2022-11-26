@@ -9,4 +9,6 @@ public class Slime : Enemy
         this.GetComponent<Enemy>().hp = 20;
         base.Awake();
     }
+    
+    
 }

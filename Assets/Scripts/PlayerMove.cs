@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
     private int hor_input = 0;
     private int ver_input = 0;
     private float actualSpeed = 6.0f;
@@ -28,12 +30,15 @@ public class PlayerMove : MonoBehaviour
         } 
         if (Input.GetKey("d")) {
             hor_input++;
+            animator.Play("Walk");
         }
         if (Input.GetKey("w")) {
             ver_input++;
+            animator.Play("Walk");
         } 
         if (Input.GetKey("s")) {
             ver_input--;
+            animator.Play("Walk");
         }
 
         Vector3 move = new Vector3(hor_input, ver_input, 0);
@@ -71,6 +76,25 @@ public class PlayerMove : MonoBehaviour
             Vector3 direction = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
             var projectile = Instantiate(PlayerProjectile, transform.position+direction*0.4f, transform.rotation);
             projectile.Fire(playerProjectileSpeed, direction);
+        }
+        
+        
+        if (Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("w") || Input.GetKey("d"))
+        {
+            animator.Play("Walk");
+        }
+        else
+        {
+            animator.Play("Idle");
+        }
+
+        if (Input.GetKey("a") && !Input.GetKey("d"))
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (Input.GetKey("d") && !Input.GetKey("a"))
+        {
+            spriteRenderer.flipX = false;   
         }
     }
 }
