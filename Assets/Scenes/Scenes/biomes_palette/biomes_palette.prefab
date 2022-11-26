@@ -52,6 +52,26 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741827
+  - first: {x: -6, y: 8, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -3, y: 8, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 7
+      m_TileSpriteIndex: 7
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -6, y: 10, z: 0}
     second:
       serializedVersion: 2
@@ -116,6 +136,10 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 6a4f216f882101644bb2761d177101b8, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 223868c1b47650a4fa6648318a32c68a, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: efb53f327b03afd429ecf233f7607d0a, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: bb11b08811bd9194fad6db0b701363d6, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 0}
@@ -129,8 +153,12 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 926e7199f6be4e848b159cd677bf81d3, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: c560b9e341b6b39418b740aff81be529, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 25b136802390a07438d6bb483ed11c01, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 04eb1331bdff65649bf0ad6327351672, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 6
+  - m_RefCount: 8
     m_Data:
       e00: 1
       e01: 0
@@ -150,8 +178,8 @@ Tilemap:
       e33: 1
   m_TileColorArray:
   - m_RefCount: 1
-    m_Data: {r: 0.98391664, g: 0.43379837, b: 0.44519866, a: 1}
-  - m_RefCount: 5
+    m_Data: {r: 0.91835254, g: 0.6155946, b: 0.6169254, a: 1}
+  - m_RefCount: 7
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -237,7 +265,7 @@ GameObject:
   - component: {fileID: 6872789009291049613}
   - component: {fileID: 7216748635568841984}
   m_Layer: 0
-  m_Name: biomes_Palette
+  m_Name: biomes_palette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,7 +299,7 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &1059120634823297372
+--- !u!114 &7944263105592116850
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
