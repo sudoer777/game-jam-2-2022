@@ -12,8 +12,9 @@ public class PlayerMove : MonoBehaviour
     private float actualSpeed = 6.0f;
     private float playerSpeed = 6.0f;
     private float playerSprintSpeed = 12.0f;
-    private float stamina = 3.0f;
-    private float staminaCap = 3.0f;
+    private float stamina = 2.0f;
+    private float staminaCap = 2.0f;
+    private float shotcooldown = 0f;
     private bool facingForward = false;
     public Projectile PlayerProjectile;
     
@@ -70,13 +71,19 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePos = Input.mousePosition;
-            Vector3 mouseRelPos = Camera.main.ScreenToWorldPoint(mousePos);
-            float playerProjectileSpeed = 10f;
-            float angle = Mathf.Atan2((mouseRelPos.y-transform.position.y),(mouseRelPos.x-transform.position.x));//*180/Mathf.PI;
-            Vector3 direction = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
-            var projectile = Instantiate(PlayerProjectile, transform.position+direction*0.4f, transform.rotation);
-            projectile.Fire(playerProjectileSpeed, direction);
+            if (shotcooldown <= 0) {
+                Vector3 mousePos = Input.mousePosition;
+                Vector3 mouseRelPos = Camera.main.ScreenToWorldPoint(mousePos);
+                float playerProjectileSpeed = 10f;
+                float angle = Mathf.Atan2((mouseRelPos.y-transform.position.y),(mouseRelPos.x-transform.position.x));//*180/Mathf.PI;
+                Vector3 direction = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
+                var projectile = Instantiate(PlayerProjectile, transform.position+direction*0.4f, transform.rotation);
+                projectile.Fire(playerProjectileSpeed, direction);
+                shotcooldown = 0.2f;
+            }
+        }
+        if (shotcooldown > 0) {
+            shotcooldown -= Time.deltaTime;
         }
         
         
@@ -107,4 +114,11 @@ public class PlayerMove : MonoBehaviour
         spriteRenderer.flipX = (Input.GetKey("a") && !Input.GetKey("d")) || (spriteRenderer.flipX && (Input.GetKey("a") && Input.GetKey("d") || !Input.GetKey("d")));
         facingForward = Input.GetKey("s") || (facingForward && !Input.GetKey("a") && !Input.GetKey("w") && !Input.GetKey("d"));
     }
+
+    public void DebuffStamina() {
+        staminaCap *= 0.8f;
+        if (stamina > staminaCap) {
+            stamina = staminaCap;
+        }
+    } 
 }

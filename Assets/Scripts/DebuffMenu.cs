@@ -11,6 +11,7 @@ public class DebuffMenu : MonoBehaviour
 
     public static DebuffMenu Instance { get { return _DebuffMenu; } }
 
+    public GameObject mainCamera;
     public GameObject debuffMenuUI;
 
     public void Awake () {
@@ -36,12 +37,15 @@ public class DebuffMenu : MonoBehaviour
         paused = false;
     }
     public void DebuffAttack () {
-    Resume();      
+        Player.Instance.DebuffAttack();
+        Resume();      
     }
-    public void DebuffVision () {
-    Resume();
+    public void DebuffVision () {   
+        mainCamera.GetComponent<CameraScroll>().DebuffVision();
+        Resume();
     }
     public void DebuffStamina () {
-    Resume();
+        Player.Instance.GetComponent<PlayerMove>().DebuffStamina();
+        Resume();
     }
 }

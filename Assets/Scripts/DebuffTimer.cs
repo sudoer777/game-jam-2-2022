@@ -35,6 +35,6 @@ public class DebuffTimer : MonoBehaviour
         }
     }
     public void ResetTimer() {
-        dtimer = 30;
+        dtimer = 5;
     }
 }
