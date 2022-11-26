@@ -15,4 +15,7 @@ public class CameraScroll : MonoBehaviour
     {
         transform.position = Player.Instance.transform.position + new Vector3(0,0,-15);
     }
+    public void DebuffVision() {
+        GetComponent<Camera>().orthographicSize *= 0.85f;
+    }
 }

@@ -16,7 +16,7 @@ public abstract class Enemy : MonoBehaviour
     public virtual void Update() {
     }
 
-    public virtual void OnHit(int damage) {
+    public virtual void OnHit(float damage) {
         hp -= damage;
         if (hp <= 0) {
             Destroy(this.gameObject);
