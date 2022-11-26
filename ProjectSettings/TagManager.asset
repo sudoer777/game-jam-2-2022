@@ -19,9 +19,9 @@ TagManager:
   - Wall
   - Object
   - Floor
-  - 
-  - 
-  - 
+  - EnemyProjectile
+  - Player
+  - Pickup
   - 
   - 
   - 

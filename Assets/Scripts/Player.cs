@@ -26,13 +26,13 @@ public class Player : MonoBehaviour {
         }
     }
 
-    private void Hit() {
+    public void Heal() {
+        hp += 1;
+    }
+
+    public void Hit() {
         hp -= 1;
         iframes = 1;
-        Debug.Log(hp);
-        if (hp == 0) {
-            Debug.Log("L");
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
