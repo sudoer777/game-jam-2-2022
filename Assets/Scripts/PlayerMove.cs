@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -25,7 +26,7 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        if (DebuffMenu.paused == true) {
+        if (DebuffMenu.paused || Pause.paused) {
             return;
         }
         hor_input = 0;
