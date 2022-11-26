@@ -24,6 +24,9 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        if (DebuffMenu.paused == true) {
+            return;
+        }
         hor_input = 0;
         ver_input = 0;
         if (Input.GetKey("a")) {
