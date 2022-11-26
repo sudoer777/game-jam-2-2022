@@ -285,7 +285,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -614,7 +614,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &916942549
 GameObject:
@@ -1552,52 +1552,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674126709}
   m_CullTransparentMesh: 1
---- !u!1 &1826003723 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1184812815369933328, guid: 9d99a120abfb44ee0a54bf0becf7a0fc, type: 3}
-  m_PrefabInstance: {fileID: 1186068799}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1826003724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1826003723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a1dc37cb4f8e46beb3fa946ccacadf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 0
---- !u!114 &1826003725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1826003723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96950725846d4d12873e151af1fbcdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 0
-  EnemyProjectile: {fileID: 8228753696869394287, guid: 9850c2e17e2194604b6785e86356b8aa, type: 3}
---- !u!114 &1826003731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1826003723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95c728c292e454647854c2c082a26142, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 0
-  movespeed: 2
 --- !u!1 &1931385449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2292,11 +2246,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6896585568695087723, guid: e6d468514651d402693bd329302c5078, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 87.75903
+      value: 1157
       objectReference: {fileID: 0}
     - target: {fileID: 6896585568695087723, guid: e6d468514651d402693bd329302c5078, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 64.77399
+      value: -183
       objectReference: {fileID: 0}
     - target: {fileID: 6896585568695087723, guid: e6d468514651d402693bd329302c5078, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2333,7 +2287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8285193685575314607, guid: 3ef8388a436804570896f2a942f9cf4a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8285193685575314607, guid: 3ef8388a436804570896f2a942f9cf4a, type: 3}
       propertyPath: m_AnchorMax.x
