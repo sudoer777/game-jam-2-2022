@@ -14,9 +14,13 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-        if (this.transform.position.x < -1 || this.transform.position.x > 16 || this.transform.position.y < 1 || this.transform.position.y > 13) {
+        if(!GetComponent<Renderer>().isVisible){
             Destroy(this.gameObject);
         }
+        /*var pos = Camera.main.WorldToScreenPoint(transform.position);
+        if (pos.x < -1 || this.transform.position.x > 16 || this.transform.position.y < 1 || this.transform.position.y > 13) {
+            Destroy(this.gameObject);
+        }*/
     }
     public void Fire(float projectileSpeed, Vector3 direction) {
         rb.velocity = direction * projectileSpeed;
