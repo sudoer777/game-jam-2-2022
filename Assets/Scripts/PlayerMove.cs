@@ -14,6 +14,7 @@ public class PlayerMove : MonoBehaviour
     private float playerSprintSpeed = 12.0f;
     private float stamina = 3.0f;
     private float staminaCap = 3.0f;
+    private bool facingForward = false;
     public Projectile PlayerProjectile;
     
     private void Awake()
@@ -90,16 +91,17 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            animator.Play("Idle");
+            if (facingForward)
+            {
+                animator.Play("FrontIdle");
+            }
+            else
+            {
+                animator.Play("Idle");
+            }
         }
-
-        if (Input.GetKey("a") && !Input.GetKey("d"))
-        {
-            spriteRenderer.flipX = true;
-        }
-        else if (Input.GetKey("d") && !Input.GetKey("a"))
-        {
-            spriteRenderer.flipX = false;   
-        }
+        
+        spriteRenderer.flipX = (Input.GetKey("a") && !Input.GetKey("d")) || (spriteRenderer.flipX && (Input.GetKey("a") && Input.GetKey("d") || !Input.GetKey("d")));
+        facingForward = Input.GetKey("s") || (facingForward && !Input.GetKey("a") && !Input.GetKey("w") && !Input.GetKey("d"));
     }
 }
