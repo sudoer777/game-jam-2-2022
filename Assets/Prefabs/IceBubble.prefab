@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 1184812815369933331}
   - component: {fileID: -1355216502078074669}
   - component: {fileID: 6598922943096214013}
-  - component: {fileID: -1932165469672138494}
+  - component: {fileID: -2930431585000897631}
+  - component: {fileID: -857320628536929857}
   m_Layer: 3
   m_Name: IceBubble
   m_TagString: Enemy
@@ -96,10 +97,10 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 227846477
-  m_SortingLayer: -4
+  m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 1acd2e3b42cf24d2780919297ccf0ac1, type: 3}
-  m_Color: {r: 0, g: 0.9999995, b: 1, a: 1}
+  m_Sprite: {fileID: 1397458686, guid: 438516b424f0b504092551da2fed31b2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -136,8 +137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
---- !u!58 &-1932165469672138494
-CircleCollider2D:
+--- !u!60 &-2930431585000897631
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -150,5 +151,71 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.49999997
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 4, y: 4.00391}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.4398827, y: 1.4819164}
+      - {x: 0.4633431, y: 1.5874883}
+      - {x: 0.40469208, y: 1.7047904}
+      - {x: 0.35777125, y: 1.7399809}
+      - {x: 0.4633431, y: 2.3616817}
+      - {x: 0.5219941, y: 2.4672537}
+      - {x: 0.5219941, y: 2.7018578}
+      - {x: 0.49853373, y: 2.7253182}
+      - {x: 0.4281525, y: 2.7370484}
+      - {x: 0.29912025, y: 2.6666672}
+      - {x: 0.2170088, y: 2.713588}
+      - {x: 0.17008798, y: 2.9012713}
+      - {x: 0.029325513, y: 3.1593359}
+      - {x: -0.076246336, y: 3.1593359}
+      - {x: -0.17008798, y: 3.0185733}
+      - {x: -0.2170088, y: 2.9130015}
+      - {x: -0.4398827, y: 2.9247317}
+      - {x: -0.4516129, y: 2.8895411}
+      - {x: -0.4633431, y: 2.8191597}
+      - {x: -0.40469208, y: 2.6901276}
+      - {x: -0.34604105, y: 2.6666672}
+      - {x: -0.4516129, y: 2.3851423}
+      - {x: -0.6041056, y: 1.9628549}
+      - {x: -0.7096774, y: 1.6930602}
+      - {x: -0.7096774, y: 1.5757581}
+      - {x: -0.686217, y: 1.5522976}
+      - {x: -0.6158358, y: 1.5405674}
+      - {x: -0.48680353, y: 1.6109487}
+      - {x: -0.32258064, y: 1.6695997}
+      - {x: -0.27565983, y: 1.5053768}
+      - {x: -0.15835777, y: 1.2590425}
+      - {x: -0.08797654, y: 1.1300102}
+      - {x: -0.06451613, y: 1.11828}
+      - {x: 0.029325513, y: 1.11828}
+      - {x: 0.14662756, y: 1.2942331}
+      - {x: 0.2521994, y: 1.3528842}
+      - {x: 0.38123167, y: 1.4232653}
+--- !u!95 &-857320628536929857
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184812815369933328}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 109b461599177084dac05b38f4bdd5b5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
