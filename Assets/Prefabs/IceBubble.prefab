@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6598922943096214013}
   - component: {fileID: -2930431585000897631}
   - component: {fileID: -857320628536929857}
+  - component: {fileID: -7488869006549870794}
   m_Layer: 3
   m_Name: IceBubble
   m_TagString: Enemy
@@ -219,3 +220,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-7488869006549870794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184812815369933328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ad9a4023a714a60ae144a7a40d9b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
+  EnemyProjectile: {fileID: 8228753696869394287, guid: 9850c2e17e2194604b6785e86356b8aa, type: 3}
