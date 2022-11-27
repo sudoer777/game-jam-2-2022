@@ -12,7 +12,7 @@ public class CameraScroll : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         transform.position = Player.Instance.transform.position + new Vector3(0,0,-15);
     }
     public void DebuffVision() {
