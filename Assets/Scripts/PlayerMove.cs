@@ -24,10 +24,12 @@ public class PlayerMove : MonoBehaviour
     public Projectile Projectile2;
     public Projectile Projectile3;
     public Projectile Projectile4;
+    private Vector3 projectileOffset;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        projectileOffset = new Vector3(0.0f, .4f, 0.0f);
     }
 
     void Update()
@@ -105,7 +107,7 @@ public class PlayerMove : MonoBehaviour
                     float playerProjectileSpeed = 12f;
                     float angle = Mathf.Atan2((mouseRelPos.y-transform.position.y),(mouseRelPos.x-transform.position.x));//*180/Mathf.PI;
                     Vector3 direction = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
-                    var projectile = Instantiate(Projectile0, transform.position+direction*0.4f, transform.rotation);
+                    var projectile = Instantiate(Projectile0, transform.position+direction*0.4f + projectileOffset, transform.rotation);
                     projectile.Fire(playerProjectileSpeed, direction);
                     shotcooldown = 0.2f;
                 } else if (Player.Instance.gun == 1) {
@@ -113,7 +115,7 @@ public class PlayerMove : MonoBehaviour
                     float angle = Mathf.Atan2((mouseRelPos.y-transform.position.y),(mouseRelPos.x-transform.position.x))-2/5;
                     for (float i = -2; i < 2.1f; i += 1) {
                         Vector3 direction = new Vector3(Mathf.Cos(angle+i/3), Mathf.Sin(angle+i/3), 0);
-                        var projectile = Instantiate(Projectile1, transform.position+direction*0.3f, transform.rotation);
+                        var projectile = Instantiate(Projectile1, transform.position+direction*0.3f + projectileOffset, transform.rotation);
                         projectile.Fire(playerProjectileSpeed, direction);
                         shotcooldown = 0.4f;
                     }
@@ -122,7 +124,7 @@ public class PlayerMove : MonoBehaviour
                     for (float i = -2; i < 2.1f; i += 1) {
                         float playerProjectileSpeed = 9f+2*i;
                         Vector3 direction = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
-                        var projectile = Instantiate(Projectile2, transform.position+direction*0.3f, transform.rotation);
+                        var projectile = Instantiate(Projectile2, transform.position+direction*0.3f + projectileOffset, transform.rotation);
                         projectile.Fire(playerProjectileSpeed, direction);
                         shotcooldown = 0.3f;
                     }
@@ -132,7 +134,7 @@ public class PlayerMove : MonoBehaviour
                             float playerProjectileSpeed = 10f+2*i;
                             float angle = Mathf.Atan2((mouseRelPos.y-transform.position.y),(mouseRelPos.x-transform.position.x));
                             Vector3 direction = new Vector3(Mathf.Cos(angle+j/2), Mathf.Sin(angle+j/2), 0);
-                            var projectile = Instantiate(Projectile3, transform.position+direction*0.3f, transform.rotation);
+                            var projectile = Instantiate(Projectile3, transform.position+direction*0.3f + projectileOffset, transform.rotation);
                             projectile.Fire(playerProjectileSpeed, direction);
                             shotcooldown = 0.3f;
                         }
@@ -141,7 +143,7 @@ public class PlayerMove : MonoBehaviour
                     float playerProjectileSpeed = 11f;
                     float angle = Mathf.Atan2((mouseRelPos.y-transform.position.y),(mouseRelPos.x-transform.position.x));
                     Vector3 direction = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
-                    var projectile = Instantiate(Projectile4, transform.position+direction*0.3f, transform.rotation);
+                    var projectile = Instantiate(Projectile4, transform.position+direction*0.3f + projectileOffset, transform.rotation);
                     projectile.Fire(playerProjectileSpeed, direction);
                     shotcooldown = 0.5f;
                 }
