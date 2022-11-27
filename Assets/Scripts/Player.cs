@@ -11,6 +11,8 @@ public class Player : MonoBehaviour {
     public int hp = 5;
     public float iframes = 0;
     public float power = 7; 
+    public int gun = 0;
+    public float gunStrength = 1;
 
     private void Awake() {
         if (_Player != null && _Player != this)

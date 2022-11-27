@@ -20,7 +20,7 @@ public class PlayerProjectile : Projectile
         if (collision.transform.tag == "Enemy")
         {
             // do damage here, for example:
-            collision.gameObject.GetComponent<Enemy>().OnHit(Player.Instance.power);
+            collision.gameObject.GetComponent<Enemy>().OnHit(Player.Instance.power * Player.Instance.gunStrength);
             Destroy(this.gameObject);
         }
         else if (collision.transform.tag == "Wall") {
