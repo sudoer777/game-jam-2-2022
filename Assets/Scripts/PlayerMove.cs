@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -92,6 +93,13 @@ public class PlayerMove : MonoBehaviour
         {
             Vector3 mousePos = Input.mousePosition;
             Vector3 mouseRelPos = Camera.main.ScreenToWorldPoint(mousePos);
+            
+            float ang = Mathf.Atan2((mouseRelPos.y-transform.position.y),(mouseRelPos.x-transform.position.x));
+
+            facingForward = ang >= -2.25f && ang <= -.75f;
+            spriteRenderer.flipX = Math.Abs(ang) >= 1.5f;
+
+            Debug.unityLogger.Log(ang);
             if (shotcooldown <= 0) {
                 if (Player.Instance.gun == 0) {
                     float playerProjectileSpeed = 12f;
