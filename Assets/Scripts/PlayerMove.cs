@@ -101,7 +101,7 @@ public class PlayerMove : MonoBehaviour
             Vector3 mousePos = Input.mousePosition;
             Vector3 mouseRelPos = Camera.main.ScreenToWorldPoint(mousePos);
             
-            float ang = Mathf.Atan2((mouseRelPos.y-transform.position.y),(mouseRelPos.x-transform.position.x));
+            float ang = Mathf.Atan2((mouseRelPos.y-transform.position.y-projectileOffset.y),(mouseRelPos.x-transform.position.x));
 
             facingForward = ang >= -2.25f && ang <= -.75f;
             spriteRenderer.flipX = Math.Abs(ang) >= 1.5f;
@@ -110,14 +110,13 @@ public class PlayerMove : MonoBehaviour
             if (shotcooldown <= 0) {
                 if (Player.Instance.gun == 0) {
                     float playerProjectileSpeed = 12f;
-                    float angle = Mathf.Atan2((mouseRelPos.y-transform.position.y),(mouseRelPos.x-transform.position.x));//*180/Mathf.PI;
-                    Vector3 direction = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
+                    Vector3 direction = new Vector3(Mathf.Cos(ang), Mathf.Sin(ang), 0);
                     var projectile = Instantiate(Projectile0, transform.position+direction*0.4f + projectileOffset, transform.rotation);
                     projectile.Fire(playerProjectileSpeed, direction);
                     shotcooldown = 0.2f;
                 } else if (Player.Instance.gun == 1) {
                     float playerProjectileSpeed = 9f;
-                    float angle = Mathf.Atan2((mouseRelPos.y-transform.position.y),(mouseRelPos.x-transform.position.x))-2/5;
+                    float angle = ang-2/5;
                     for (float i = -2; i < 2.1f; i += 1) {
                         Vector3 direction = new Vector3(Mathf.Cos(angle+i/3), Mathf.Sin(angle+i/3), 0);
                         var projectile = Instantiate(Projectile1, transform.position+direction*0.3f + projectileOffset, transform.rotation);
@@ -126,10 +125,9 @@ public class PlayerMove : MonoBehaviour
                     }
                     PlayerAudio.clip = Projectile1Audio;
                 } else if (Player.Instance.gun == 2) {
-                    float angle = Mathf.Atan2((mouseRelPos.y-transform.position.y),(mouseRelPos.x-transform.position.x));
                     for (float i = -2; i < 2.1f; i += 1) {
                         float playerProjectileSpeed = 9f+2*i;
-                        Vector3 direction = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
+                        Vector3 direction = new Vector3(Mathf.Cos(ang), Mathf.Sin(ang), 0);
                         var projectile = Instantiate(Projectile2, transform.position+direction*0.3f + projectileOffset, transform.rotation);
                         projectile.Fire(playerProjectileSpeed, direction);
                         shotcooldown = 0.3f;
@@ -139,8 +137,7 @@ public class PlayerMove : MonoBehaviour
                     for (float i = -1; i < 2.1f; i += 1) {
                         for (float j = -1; j < 1.1f; j += 1) {
                             float playerProjectileSpeed = 10f+2*i;
-                            float angle = Mathf.Atan2((mouseRelPos.y-transform.position.y),(mouseRelPos.x-transform.position.x));
-                            Vector3 direction = new Vector3(Mathf.Cos(angle+j/2), Mathf.Sin(angle+j/2), 0);
+                            Vector3 direction = new Vector3(Mathf.Cos(ang+j/2), Mathf.Sin(ang+j/2), 0);
                             var projectile = Instantiate(Projectile3, transform.position+direction*0.3f + projectileOffset, transform.rotation);
                             projectile.Fire(playerProjectileSpeed, direction);
                             shotcooldown = 0.3f;
@@ -149,8 +146,7 @@ public class PlayerMove : MonoBehaviour
                     PlayerAudio.clip = Projectile3Audio;
                 } else if (Player.Instance.gun == 4) {
                     float playerProjectileSpeed = 11f;
-                    float angle = Mathf.Atan2((mouseRelPos.y-transform.position.y),(mouseRelPos.x-transform.position.x));
-                    Vector3 direction = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
+                    Vector3 direction = new Vector3(Mathf.Cos(ang), Mathf.Sin(ang), 0);
                     var projectile = Instantiate(Projectile4, transform.position+direction*0.3f + projectileOffset, transform.rotation);
                     projectile.Fire(playerProjectileSpeed, direction);
                     shotcooldown = 0.5f;
