@@ -42,4 +42,9 @@ public class Scenes : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Sound");
     }
+    
+    public void Credits()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
+    }
 }
