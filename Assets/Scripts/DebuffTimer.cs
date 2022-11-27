@@ -10,6 +10,7 @@ public class DebuffTimer : MonoBehaviour
     public static DebuffTimer Instance { get { return _DebuffTimer; } }
 
     public GameObject canvas;
+    public GameObject deathMenu;
 
     TextMeshProUGUI t;
     public float dtimer;
@@ -23,6 +24,8 @@ public class DebuffTimer : MonoBehaviour
         } else {
             _DebuffTimer = this;
         }
+        deathMenu.SetActive(false);
+        Pause.ResumeGame();
     }
     
     void Update()
@@ -32,6 +35,12 @@ public class DebuffTimer : MonoBehaviour
             canvas.GetComponent<DebuffMenu>().Pause();
         } else {
         t.SetText(Mathf.Floor(dtimer).ToString());
+        }
+        
+        
+        if (Player.Instance.hp <= 0)
+        {
+            Pause.PauseGame(deathMenu);
         }
     }
     public void ResetTimer() {
