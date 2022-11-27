@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickupGun : MonoBehaviour
 {
-    public UnityEditor.Animations.AnimatorController animatorController;
+    public RuntimeAnimatorController animatorController;
     public int gunID;
     public float gunStrength;
     // Start is called before the first frame update
