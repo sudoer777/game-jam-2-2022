@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -30,11 +31,11 @@ public class PlayerMove : MonoBehaviour
             return;
         }
 
-        var playerKeyUp = PlayerPrefs.HasKey("Up") ? PlayerPrefs.GetString("Up") : "w";
-        var playerKeyDown = PlayerPrefs.HasKey("Down") ? PlayerPrefs.GetString("Down") : "s";
-        var playerKeyLeft = PlayerPrefs.HasKey("Left") ? PlayerPrefs.GetString("Left") : "a";
-        var playerKeyRight = PlayerPrefs.HasKey("Right") ? PlayerPrefs.GetString("Right") : "d";
-        var playerKeySprint = PlayerPrefs.HasKey("Sprint") ? PlayerPrefs.GetString("Sprint") : "space";
+        var playerKeyUp = PlayerPrefs.HasKey("Up") ? (KeyCode)Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Up")) : KeyCode.W;
+        var playerKeyDown = PlayerPrefs.HasKey("Down") ? (KeyCode)Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Down")) : KeyCode.S;
+        var playerKeyLeft = PlayerPrefs.HasKey("Left") ? (KeyCode)Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Left")) : KeyCode.A;
+        var playerKeyRight = PlayerPrefs.HasKey("Right") ? (KeyCode)Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Right")) : KeyCode.D;
+        var playerKeySprint = PlayerPrefs.HasKey("Sprint") ? (KeyCode)Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Sprint")) : KeyCode.Space;
 
         var upPressed = Input.GetKey(playerKeyUp);
         var downPressed = Input.GetKey(playerKeyDown);
