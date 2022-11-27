@@ -56,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -102,8 +102,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 9211712681904927251, guid: 838089047367443bba3518976e1e83ba, type: 3}
   PlayerProjectile: {fileID: 9211712681904927252, guid: 838089047367443bba3518976e1e83ba, type: 3}
-  staminaBar: {fileID: 2375889983475157575, guid: e6d468514651d402693bd329302c5078, type: 3}
-  c: {fileID: 8285193685575314606, guid: 3ef8388a436804570896f2a942f9cf4a, type: 3}
 --- !u!50 &1125783377550435111
 Rigidbody2D:
   serializedVersion: 4

@@ -529,19 +529,19 @@ Tilemap:
       e33: 1
   m_TileColorArray:
   - m_RefCount: 1
-    m_Data: {r: 0.8923506, g: 0.57713264, b: 0.6182075, a: 1}
+    m_Data: {r: 0.7364146, g: 0.38537323, b: 0.45418525, a: 1}
   - m_RefCount: 25
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 1
-    m_Data: {r: 0.9220217, g: 0.48001477, b: 0.50976384, a: 1}
+    m_Data: {r: 0.94881284, g: 0.63305575, b: 0.7006614, a: 1}
   - m_RefCount: 1
-    m_Data: {r: 0.923188, g: 0.38855103, b: 0.4421799, a: 1}
+    m_Data: {r: 0.941302, g: 0.48057756, b: 0.55279183, a: 1}
   - m_RefCount: 1
-    m_Data: {r: 0.73921365, g: 0.4406362, b: 0.49498916, a: 1}
+    m_Data: {r: 0.79556865, g: 0.38844642, b: 0.47390288, a: 1}
   - m_RefCount: 1
-    m_Data: {r: 0.97765297, g: 0.5793108, b: 0.6736394, a: 1}
+    m_Data: {r: 0.772174, g: 0.53487873, b: 0.60720396, a: 1}
   - m_RefCount: 1
-    m_Data: {r: 0.93528736, g: 0.46148437, b: 0.46894762, a: 1}
+    m_Data: {r: 0.71235937, g: 0.42005304, b: 0.44606152, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -586,7 +586,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
