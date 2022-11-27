@@ -24,6 +24,11 @@ public class PlayerMove : MonoBehaviour
     public Projectile Projectile2;
     public Projectile Projectile3;
     public Projectile Projectile4;
+    public AudioClip Projectile1Audio;
+    public AudioClip Projectile2Audio;
+    public AudioClip Projectile3Audio;
+    public AudioClip Projectile4Audio;
+    public AudioSource PlayerAudio;
     private Vector3 projectileOffset;
 
     private void Awake()
@@ -119,6 +124,7 @@ public class PlayerMove : MonoBehaviour
                         projectile.Fire(playerProjectileSpeed, direction);
                         shotcooldown = 0.4f;
                     }
+                    PlayerAudio.clip = Projectile1Audio;
                 } else if (Player.Instance.gun == 2) {
                     float angle = Mathf.Atan2((mouseRelPos.y-transform.position.y),(mouseRelPos.x-transform.position.x));
                     for (float i = -2; i < 2.1f; i += 1) {
@@ -128,6 +134,7 @@ public class PlayerMove : MonoBehaviour
                         projectile.Fire(playerProjectileSpeed, direction);
                         shotcooldown = 0.3f;
                     }
+                    PlayerAudio.clip = Projectile2Audio;
                 } else if (Player.Instance.gun == 3) {
                     for (float i = -1; i < 2.1f; i += 1) {
                         for (float j = -1; j < 1.1f; j += 1) {
@@ -139,6 +146,7 @@ public class PlayerMove : MonoBehaviour
                             shotcooldown = 0.3f;
                         }
                     }
+                    PlayerAudio.clip = Projectile3Audio;
                 } else if (Player.Instance.gun == 4) {
                     float playerProjectileSpeed = 11f;
                     float angle = Mathf.Atan2((mouseRelPos.y-transform.position.y),(mouseRelPos.x-transform.position.x));
@@ -146,7 +154,9 @@ public class PlayerMove : MonoBehaviour
                     var projectile = Instantiate(Projectile4, transform.position+direction*0.3f + projectileOffset, transform.rotation);
                     projectile.Fire(playerProjectileSpeed, direction);
                     shotcooldown = 0.5f;
+                    PlayerAudio.clip = Projectile4Audio;
                 }
+                PlayerAudio.Play();
             }
         }
         if (shotcooldown > 0) {
