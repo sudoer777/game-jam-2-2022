@@ -59,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -116,6 +116,7 @@ MonoBehaviour:
   Projectile3Audio: {fileID: 8300000, guid: 4e60bd2349bf4c849819133908704512, type: 3}
   Projectile4Audio: {fileID: 8300000, guid: d95ffa709ef46bf43ba10e029fd6c8c7, type: 3}
   PlayerAudio: {fileID: 2161121493828543724}
+  PlayerProjectile: {fileID: 9211712681904927252, guid: 838089047367443bba3518976e1e83ba, type: 3}
 --- !u!50 &1125783377550435111
 Rigidbody2D:
   serializedVersion: 4
