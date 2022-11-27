@@ -29,28 +29,41 @@ public class PlayerMove : MonoBehaviour
         if (DebuffMenu.paused || Pause.paused) {
             return;
         }
+
+        var playerKeyUp = PlayerPrefs.HasKey("Up") ? PlayerPrefs.GetString("Up") : "w";
+        var playerKeyDown = PlayerPrefs.HasKey("Down") ? PlayerPrefs.GetString("Down") : "s";
+        var playerKeyLeft = PlayerPrefs.HasKey("Left") ? PlayerPrefs.GetString("Left") : "a";
+        var playerKeyRight = PlayerPrefs.HasKey("Right") ? PlayerPrefs.GetString("Right") : "d";
+        var playerKeySprint = PlayerPrefs.HasKey("Sprint") ? PlayerPrefs.GetString("Sprint") : "space";
+
+        var upPressed = Input.GetKey(playerKeyUp);
+        var downPressed = Input.GetKey(playerKeyDown);
+        var leftPressed = Input.GetKey(playerKeyLeft);
+        var rightPressed = Input.GetKey(playerKeyRight);
+        var sprintPressed = Input.GetKey(playerKeySprint);
+
         hor_input = 0;
         ver_input = 0;
-        if (Input.GetKey("a")) {
+        if (leftPressed) {
             hor_input--;
         } 
-        if (Input.GetKey("d")) {
+        if (rightPressed) {
             hor_input++;
         }
-        if (Input.GetKey("w")) {
+        if (upPressed) {
             ver_input++;
         } 
-        if (Input.GetKey("s")) {
+        if (downPressed) {
             ver_input--;
         }
 
         Vector3 move = new Vector3(hor_input, ver_input, 0);
 
-        if (Input.GetKeyDown("space") && stamina > 0.5f) {
+        if (sprintPressed && stamina > 0.5f) {
             actualSpeed = playerSprintSpeed;
             stamina -= Time.deltaTime;
         } else {
-            if (!Input.GetKey("space") || stamina <= 0f) {
+            if (!sprintPressed || stamina <= 0f) {
                 actualSpeed = playerSpeed;
                 if (stamina < staminaCap) {
                     stamina += Time.deltaTime;
@@ -88,15 +101,15 @@ public class PlayerMove : MonoBehaviour
         }
         
         
-        if (Input.GetKey("a") || Input.GetKey("d"))
+        if (leftPressed || rightPressed)
         {
             animator.Play("Walk");
         }
-        else if (Input.GetKey("w"))
+        else if (upPressed)
         {
             animator.Play("BackWalk");
         }
-        else if (Input.GetKey("s"))
+        else if (downPressed)
         {
             animator.Play("FrontWalk");
         }
@@ -112,8 +125,8 @@ public class PlayerMove : MonoBehaviour
             }
         }
         
-        spriteRenderer.flipX = (Input.GetKey("a") && !Input.GetKey("d")) || (spriteRenderer.flipX && (Input.GetKey("a") && Input.GetKey("d") || !Input.GetKey("d")));
-        facingForward = Input.GetKey("s") || (facingForward && !Input.GetKey("a") && !Input.GetKey("w") && !Input.GetKey("d"));
+        spriteRenderer.flipX = (leftPressed && !rightPressed) || (spriteRenderer.flipX && (leftPressed && rightPressed || !rightPressed));
+        facingForward = downPressed || (facingForward && !leftPressed && !upPressed && !rightPressed);
     }
 
     public void DebuffStamina() {
