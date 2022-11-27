@@ -1139,6 +1139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30512ad562bed524e9e685233c29b67a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuSound: {fileID: 1304760162}
   escapeMenu: {fileID: 393908169}
 --- !u!114 &1304760161
 MonoBehaviour:
@@ -1248,6 +1249,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1304760163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304760152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a8bb301e4468942a4bca6ef45885f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Menu
 --- !u!1 &1336230845
 GameObject:
   m_ObjectHideFlags: 0
