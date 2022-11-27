@@ -106,7 +106,7 @@ MonoBehaviour:
   rb: {fileID: 9211712681904927251, guid: 838089047367443bba3518976e1e83ba, type: 3}
   animator: {fileID: 4272068536929796473}
   spriteRenderer: {fileID: 1125783377550435097}
-  Projectile0: {fileID: 0}
+  Projectile0: {fileID: 9211712681904927252, guid: 838089047367443bba3518976e1e83ba, type: 3}
   Projectile1: {fileID: 9211712681904927252, guid: 838089047367443bba3518976e1e83ba, type: 3}
   Projectile2: {fileID: 9211712681904927252, guid: 9d3f4f8c56bac8b439ecda2a82a89ca3, type: 3}
   Projectile3: {fileID: 9211712681904927252, guid: 48d9149ea1be9a14eac5cbb53e9cd726, type: 3}
