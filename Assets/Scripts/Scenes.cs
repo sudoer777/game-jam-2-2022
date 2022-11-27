@@ -37,4 +37,9 @@ public class Scenes : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Controls");
     }
+
+    public void Sound()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Sound");
+    }
 }

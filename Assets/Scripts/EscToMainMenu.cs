@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EscToMainMenu : MonoBehaviour
 {
+    public AudioSource menuSound;
+    
     public GameObject escapeMenu;
 
     public void Awake () {
@@ -23,6 +25,7 @@ public class EscToMainMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Pause.Toggle(escapeMenu);
+            menuSound.Play();
         }
     }
 
