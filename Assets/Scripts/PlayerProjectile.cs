@@ -20,7 +20,9 @@ public class PlayerProjectile : Projectile
         if (collision.transform.tag == "Enemy")
         {
             // do damage here, for example:
-            collision.gameObject.GetComponent<Enemy>().OnHit(Player.Instance.power * Player.Instance.gunStrength);
+            if (Vector3.Distance(transform.position, Player.Instance.transform.position) <= 30f) {
+                collision.gameObject.GetComponent<Enemy>().OnHit(Player.Instance.power * Player.Instance.gunStrength);
+            }
             Destroy(this.gameObject);
         }
         else if (collision.transform.tag == "Player") return;

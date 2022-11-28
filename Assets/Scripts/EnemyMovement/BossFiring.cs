@@ -17,7 +17,7 @@ public class BossFiring : Enemy
             return;
         }
         if ((lifespan % 0.15) < 0.08 && ((lifespan + Time.deltaTime) % 0.15) > 0.08) {
-            float enemyProjectileSpeed = 6f;
+            float enemyProjectileSpeed = 15f;
             for (int i = 0; i < 8; i++) {
                 float angle = Mathf.PI/4*i+50*Mathf.Cos(lifespan/4);
                 Vector3 direction = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);

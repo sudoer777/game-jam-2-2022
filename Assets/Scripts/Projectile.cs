@@ -17,10 +17,10 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-        lifespan += Time.deltaTime;
-        if(!GetComponent<Renderer>().isVisible && lifespan > 2){
+        /*lifespan += Time.deltaTime;
+        if(/*!GetComponent<Renderer>().isVisible && #1#lifespan > 1.5){
             Destroy(this.gameObject);
-        }
+        }*/
     }
     public void Fire(float projectileSpeed, Vector3 direction) {
         rb.velocity = direction * projectileSpeed;
