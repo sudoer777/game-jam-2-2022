@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         lifespan += Time.deltaTime;
-        if(!GetComponent<Renderer>().isVisible && lifespan > 2){
+        if(/*!GetComponent<Renderer>().isVisible && */lifespan > 1.5){
             Destroy(this.gameObject);
         }
     }
