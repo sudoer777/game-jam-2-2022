@@ -19,6 +19,7 @@ public class CameraScroll : MonoBehaviour
     }
     public void DebuffVision() {
         GetComponent<Camera>().orthographicSize *= 0.85f;
-        staminaBar.GetComponent<RectTransform>().SetPositionAndRotation(Player.Instance.transform.position + new Vector3(0, Player.Instance.transform.lossyScale.y + .85f, 0), Quaternion.identity);
+        
+        //staminaBar.GetComponent<RectTransform>().SetPositionAndRotation(Player.Instance.transform.position/*Player.Instance.transform.position + new Vector3(0, Player.Instance.transform.localPosition.y + 3f, 0)*/, Quaternion.identity);
     }
 }
