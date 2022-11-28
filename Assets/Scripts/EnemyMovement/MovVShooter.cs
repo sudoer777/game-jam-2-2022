@@ -17,6 +17,9 @@ public class MovVShooter : Enemy
 
     public override void Update()
     {
+        if (Vector3.Distance(transform.position, Player.Instance.transform.position) >= 30f) {
+            return;
+        }
         if ((lifespan % 1.2) < 0.5 && ((lifespan + Time.deltaTime) % 1.2) > 0.5) {
             for (float i = 0f; i < 2.1; i++) {
                 float enemyProjectileSpeed = 36f+8*i;
@@ -31,5 +34,6 @@ public class MovVShooter : Enemy
             }
         }
         UpdateLifespan();
+        base.Update();
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -7212728758021590816}
   - component: {fileID: 4783514930559240520}
   - component: {fileID: 6664688130258480410}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TundraSmallGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

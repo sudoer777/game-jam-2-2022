@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -7212728758021590816}
   - component: {fileID: -6909656834137817266}
   - component: {fileID: 4783514930559240520}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: VolcanoMedGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

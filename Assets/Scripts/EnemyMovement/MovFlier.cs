@@ -9,7 +9,11 @@ public class MovFlier : Enemy
     
     public override void Update()
     {
+        if (Vector3.Distance(transform.position, Player.Instance.transform.position) >= 30f) {
+            return;
+        }
         pathToPlayer = (Player.Instance.transform.position - this.transform.position).normalized;
         rb.velocity = pathToPlayer*movespeed;
+        base.Update();
     }
 }

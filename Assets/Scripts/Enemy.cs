@@ -14,10 +14,9 @@ public abstract class Enemy : MonoBehaviour
         heart = (GameObject) Resources.Load("HealthPickup");//heart = LoadPrefabFromFile("HealthPickup");
         rb = GetComponent<Rigidbody2D>();
     }
-    //this.GetComponent<Enemy>().hp = 20 is the way to set HP in a subclass
-    public virtual void Update() {
+    public virtual void Update (){
+        
     }
-
     public virtual void OnHit(float damage) {
         hp -= damage;
         if (hp <= 0) {
