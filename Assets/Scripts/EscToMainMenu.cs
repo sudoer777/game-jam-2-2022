@@ -7,9 +7,11 @@ public class EscToMainMenu : MonoBehaviour
     public AudioSource menuSound;
     
     public GameObject escapeMenu;
+    public GameObject winMenu;
 
     public void Awake () {
         escapeMenu.SetActive(false);
+        winMenu.SetActive(false);
     }
 
     
