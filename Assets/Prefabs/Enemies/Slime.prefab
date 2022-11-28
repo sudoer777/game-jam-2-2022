@@ -139,9 +139,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
+  heart: {fileID: 0}
   animator: {fileID: 7672456572723029716}
   spriteRenderer: {fileID: 1184812815369933331}
-  movespeed: 10
+  movespeed: 13
 --- !u!114 &-7263266300130217513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
+  heart: {fileID: 0}
 --- !u!95 &7672456572723029716
 Animator:
   serializedVersion: 4

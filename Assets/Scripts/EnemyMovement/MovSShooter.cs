@@ -17,7 +17,7 @@ public class MovSShooter : Enemy
     {
         if ((lifespan % 2.5) < 1.2 && ((lifespan + Time.deltaTime) % 2.5) > 1.2) {
             for (int i = 0; i < 10; i++) {
-                float enemyProjectileSpeed = 16f+Random.Range(0f, 10f);
+                float enemyProjectileSpeed = 32f+Random.Range(0f, 20f);
                 playerPos = Player.Instance.transform.position;
                 float ang = Mathf.Atan2((playerPos.y-transform.position.y),(playerPos.x-transform.position.x));
                 float deviation = Random.Range(-1.5f, 1.5f);

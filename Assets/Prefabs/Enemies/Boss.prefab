@@ -123,7 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
-  movespeed: 5
+  heart: {fileID: 0}
+  movespeed: 7
 --- !u!114 &6598922943096214013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
+  heart: {fileID: 0}
 --- !u!60 &-2930431585000897631
 PolygonCollider2D:
   m_ObjectHideFlags: 0
