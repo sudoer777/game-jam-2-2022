@@ -23,10 +23,8 @@ public class EnemyProjectile : Projectile
             collision.gameObject.GetComponent<Player>().Hit();
             Destroy(this.gameObject);
         }
-        else if (collision.transform.tag == "Wall") {
+        else {
             Destroy(this.gameObject);
-        } else {
-            
         }
     }
 

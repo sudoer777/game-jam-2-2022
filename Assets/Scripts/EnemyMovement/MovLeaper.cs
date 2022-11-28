@@ -12,7 +12,7 @@ public class MovLeaper : Enemy
     
     public override void Update()
     {
-        if (Vector3.Distance(transform.position, Player.Instance.transform.position) >= 30f) {
+        if (Vector3.Distance(transform.position, Player.Instance.transform.position) >= 50f) {
             return;
         }
         if ((lifespan % 2) < 1.5 && ((lifespan + Time.deltaTime) % 2) > .75)

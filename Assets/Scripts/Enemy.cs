@@ -21,7 +21,7 @@ public abstract class Enemy : MonoBehaviour
     public virtual void OnHit(float damage) {
         hp -= damage;
         if (hp <= 0) {
-            if (Random.Range(0, 1) < 0.1f) { 
+            if (Random.Range(0f, 1f) < 0.4f) { 
                 heart = Instantiate(heart, transform.position, Quaternion.identity);
             }
 
