@@ -3,7 +3,24 @@ guid: aebfd7195e2fa4ce2a660630f6f1f2ba
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cobblestoneWall: {fileID: 851701720968585650, guid: 6e41e027482364e919ab09043849ca8e, type: 3}
+  - cobblestone: {fileID: 851701720968585650, guid: 65efceef35730fe44981733a09d5c2f1, type: 3}
+  - player: {fileID: 1125783377550435109, guid: 862014687c82c428c8eab0ab4b3fb2f0, type: 3}
+  - slime: {fileID: 1184812815369933328, guid: 668b3aad758fc4e7cbdb2da1c96751e1, type: 3}
+  - icebubble: {fileID: 1184812815369933328, guid: 6893319f143b0433c889ab4ee18e703b, type: 3}
+  - desertbubble: {fileID: 1184812815369933328, guid: a8bc764b385f9b74eb6218607ae4dbb6, type: 3}
+  - firebubble: {fileID: 1184812815369933328, guid: 9d99a120abfb44ee0a54bf0becf7a0fc, type: 3}
+  - desertgun: {fileID: 2857354000665658167, guid: ea0fa58d758dc486c8c4770df72fab8c, type: 3}
+  - forestgun: {fileID: 2857354000665658167, guid: 342808b1afad94e45932871f1a3a7af5, type: 3}
+  - tundragun: {fileID: 2857354000665658167, guid: b1d031a047d0a4e5c8f02270cd5c392c, type: 3}
+  - volcanogun: {fileID: 2857354000665658167, guid: 5dd59e47b8b0d43a7bbd0d215c8a67bc, type: 3}
+  - boss: {fileID: 1184812815369933328, guid: a9b1b16746f6c0c4da379991bde84f1a, type: 3}
+  - grass: {fileID: 851701720968585650, guid: be4e282f027d6fd4fbe2a97f425c6fe7, type: 3}
+  - mud: {fileID: 851701720968585650, guid: b091f90774a5991478dab1160153ba49, type: 3}
+  - sand: {fileID: 851701720968585650, guid: a7c20bee984a93042b4d5d0ad3754b8e, type: 3}
+  - ice: {fileID: 851701720968585650, guid: 0bfce507b2ee0ff49a060939e9a3550e, type: 3}
+  - snow: {fileID: 851701720968585650, guid: c07f18ba8b973b34aa2ca399b010c908, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -10,6 +10,10 @@ public class Player : MonoBehaviour {
 
     public int hp = 5;
     public float iframes = 0;
+    public float power = 7; 
+    public int gun = 0;
+    public float gunStrength = 1;
+    //public List<GameObject> enemyList = new List<GameObject>();
 
     private void Awake() {
         if (_Player != null && _Player != this)
@@ -24,15 +28,26 @@ public class Player : MonoBehaviour {
         if (iframes > 0) {
             iframes -= Time.deltaTime;
         }
+        /*for (int i = 0; i < enemyList.Count; i++) {
+            if (enemyList[i] != null) {
+                if (Vector3.Distance(transform.position, enemyList[i].transform.position) <= 10f) {
+                    enemyList[i].SetActive(true);
+                }
+            }
+        }*/
     }
 
-    private void Hit() {
+    public void Heal() {
+        hp += 1;
+    }
+
+    public void Hit() {
         hp -= 1;
         iframes = 1;
-        Debug.Log(hp);
-        if (hp == 0) {
-            Debug.Log("L");
-        }
+    }
+
+    public void DebuffAttack() {
+        power *= 0.8f;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

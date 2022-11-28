@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - Enemy
   - Wall
+  - Pickup
   - Undefined
   layers:
   - Default
@@ -19,12 +20,12 @@ TagManager:
   - Wall
   - Object
   - Floor
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - EnemyProjectile
+  - Player
+  - Pickup
+  - Pause UI
+  - PlayerProjectile
+  - Items
   - 
   - 
   - 
@@ -43,9 +44,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Floor
     uniqueID: 981596207
     locked: 0
@@ -57,7 +55,10 @@ TagManager:
     locked: 0
   - name: Enemies
     uniqueID: 227846477
-    locked: 0
+    locked: 1
   - name: Player
     uniqueID: 613898929
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0

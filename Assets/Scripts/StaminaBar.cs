@@ -22,8 +22,7 @@ public class StaminaBar : MonoBehaviour
     }
 
     private void Update() {
-        Vector3 playerPosition = Player.Instance.transform.position;
-        transform.position = new Vector3(playerPosition.x, playerPosition.y+1, playerPosition.z);
+        
     }
 
     public void SetStamina(float s) {

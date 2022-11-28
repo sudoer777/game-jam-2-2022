@@ -177,8 +177,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6896585568695087722}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
   m_LocalScale: {x: 44.833332, y: 44.833332, z: 44.833332}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -255,4 +255,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2abde2771baab4f9db019d565497fe73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
