@@ -13,8 +13,8 @@ public class PlayerMove : MonoBehaviour
     private int hor_input = 0;
     private int ver_input = 0;
     private float actualSpeed = 6.0f;
-    private float playerSpeed = 6.0f;
-    private float playerSprintSpeed = 12.0f;
+    private float playerSpeed = 8.0f;
+    private float playerSprintSpeed = 14.0f;
     private float stamina = 2.0f;
     private float staminaCap = 2.0f;
     private float shotcooldown = 0f;
@@ -34,7 +34,7 @@ public class PlayerMove : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        projectileOffset = new Vector3(0.0f, .4f, 0.0f);
+        projectileOffset = new Vector3(0.0f, 1.6f, 0.0f);
     }
 
     void Update()
@@ -109,13 +109,13 @@ public class PlayerMove : MonoBehaviour
             Debug.unityLogger.Log(ang);
             if (shotcooldown <= 0) {
                 if (Player.Instance.gun == 0) {
-                    float playerProjectileSpeed = 12f;
+                    float playerProjectileSpeed = 48f;
                     Vector3 direction = new Vector3(Mathf.Cos(ang), Mathf.Sin(ang), 0);
                     var projectile = Instantiate(Projectile0, transform.position+direction*0.4f + projectileOffset, transform.rotation);
                     projectile.Fire(playerProjectileSpeed, direction);
                     shotcooldown = 0.2f;
                 } else if (Player.Instance.gun == 1) {
-                    float playerProjectileSpeed = 9f;
+                    float playerProjectileSpeed = 36f;
                     float angle = ang-2/5;
                     for (float i = -2; i < 2.1f; i += 1) {
                         Vector3 direction = new Vector3(Mathf.Cos(angle+i/3), Mathf.Sin(angle+i/3), 0);
@@ -126,7 +126,7 @@ public class PlayerMove : MonoBehaviour
                     PlayerAudio.clip = Projectile1Audio;
                 } else if (Player.Instance.gun == 2) {
                     for (float i = -2; i < 2.1f; i += 1) {
-                        float playerProjectileSpeed = 9f+2*i;
+                        float playerProjectileSpeed = 36f+8*i;
                         Vector3 direction = new Vector3(Mathf.Cos(ang), Mathf.Sin(ang), 0);
                         var projectile = Instantiate(Projectile2, transform.position+direction*0.3f + projectileOffset, transform.rotation);
                         projectile.Fire(playerProjectileSpeed, direction);
@@ -136,7 +136,7 @@ public class PlayerMove : MonoBehaviour
                 } else if (Player.Instance.gun == 3) {
                     for (float i = -1; i < 2.1f; i += 1) {
                         for (float j = -1; j < 1.1f; j += 1) {
-                            float playerProjectileSpeed = 10f+2*i;
+                            float playerProjectileSpeed = 40f+8*i;
                             Vector3 direction = new Vector3(Mathf.Cos(ang+j/2), Mathf.Sin(ang+j/2), 0);
                             var projectile = Instantiate(Projectile3, transform.position+direction*0.3f + projectileOffset, transform.rotation);
                             projectile.Fire(playerProjectileSpeed, direction);
@@ -145,7 +145,7 @@ public class PlayerMove : MonoBehaviour
                     }
                     PlayerAudio.clip = Projectile3Audio;
                 } else if (Player.Instance.gun == 4) {
-                    float playerProjectileSpeed = 11f;
+                    float playerProjectileSpeed = 44f;
                     Vector3 direction = new Vector3(Mathf.Cos(ang), Mathf.Sin(ang), 0);
                     var projectile = Instantiate(Projectile4, transform.position+direction*0.3f + projectileOffset, transform.rotation);
                     projectile.Fire(playerProjectileSpeed, direction);

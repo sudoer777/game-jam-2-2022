@@ -23,7 +23,8 @@ public class PlayerProjectile : Projectile
             collision.gameObject.GetComponent<Enemy>().OnHit(Player.Instance.power * Player.Instance.gunStrength);
             Destroy(this.gameObject);
         }
-        else if (collision.transform.tag == "Wall") {
+        else if (collision.transform.tag == "Player") return;
+        else /*if (collision.transform.tag == "Wall")*/ {
             Destroy(this.gameObject);
         }
     }
