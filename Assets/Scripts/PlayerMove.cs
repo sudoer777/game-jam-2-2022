@@ -114,6 +114,7 @@ public class PlayerMove : MonoBehaviour
                     var projectile = Instantiate(Projectile0, transform.position+direction*0.4f + projectileOffset, transform.rotation);
                     projectile.Fire(playerProjectileSpeed, direction);
                     shotcooldown = 0.2f;
+                    PlayerAudio.clip = Projectile4Audio;
                 } else if (Player.Instance.gun == 1) {
                     float playerProjectileSpeed = 36f;
                     float angle = ang-2/5;
