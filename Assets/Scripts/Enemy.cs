@@ -16,12 +16,12 @@ public abstract class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
     public virtual void Update (){
-        
+
     }
     public virtual void OnHit(float damage) {
         hp -= damage;
         if (hp <= 0) {
-            if (Random.Range(0, 1) < 0.2f) { 
+            if (Random.Range(0, 1) < 0.1f) { 
                 heart = Instantiate(heart, transform.position, Quaternion.identity);
             }
 
