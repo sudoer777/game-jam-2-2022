@@ -10,7 +10,8 @@ public class Player : MonoBehaviour {
 
     public int hp = 5;
     public float iframes = 0;
-    public float power = 7; 
+    public float power = 7;
+    public float cooldownMtpr = 1;
     public int gun = 0;
     public float gunStrength = 1;
     //public List<GameObject> enemyList = new List<GameObject>();
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour {
 
     public void DebuffAttack() {
         power *= 0.8f;
+        cooldownMtpr *= 1.3f;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
