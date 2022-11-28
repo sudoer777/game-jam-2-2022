@@ -19,7 +19,7 @@ public class Scenes : MonoBehaviour
 
     public void PlayGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene_v2");
         Pause.ResumeGame(); 
     }
 
