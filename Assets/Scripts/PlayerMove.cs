@@ -34,7 +34,7 @@ public class PlayerMove : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        projectileOffset = new Vector3(0.0f, .4f, 0.0f);
+        projectileOffset = new Vector3(0.0f, 1.6f, 0.0f);
     }
 
     void Update()
