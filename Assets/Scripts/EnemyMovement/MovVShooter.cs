@@ -16,7 +16,7 @@ public class MovVShooter : Enemy
     {
         if ((lifespan % 1.2) < 0.5 && ((lifespan + Time.deltaTime) % 1.2) > 0.5) {
             for (float i = 0f; i < 2.1; i++) {
-                float enemyProjectileSpeed = 9f+2*i;
+                float enemyProjectileSpeed = 18f+4*i;
                 playerPos = Player.Instance.transform.position;
                 float ang = Mathf.Atan2((playerPos.y-transform.position.y),(playerPos.x-transform.position.x));
                 direction = new Vector3(Mathf.Cos(ang+0.3f), Mathf.Sin(ang+0.3f), 0);
