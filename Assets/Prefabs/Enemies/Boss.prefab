@@ -12,9 +12,12 @@ GameObject:
   - component: {fileID: 1184812815369933330}
   - component: {fileID: 1184812815369933331}
   - component: {fileID: -1355216502078074669}
+  - component: {fileID: -5725900624445987543}
   - component: {fileID: 6598922943096214013}
   - component: {fileID: -2930431585000897631}
   - component: {fileID: -857320628536929857}
+  - component: {fileID: 8950420484752856690}
+  - component: {fileID: 4264482932941392077}
   m_Layer: 3
   m_Name: Boss
   m_TagString: Enemy
@@ -123,9 +126,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
-  heart: {fileID: 0}
+  heart: {fileID: 3024700637105221624, guid: 2f1eb484bd7f346aeba16eeba68f7cf2, type: 3}
   movespeed: 7
---- !u!114 &6598922943096214013
+--- !u!114 &-5725900624445987543
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,6 +136,21 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184812815369933328}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1dc37cb4f8e46beb3fa946ccacadf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
+  heart: {fileID: 3024700637105221624, guid: 2f1eb484bd7f346aeba16eeba68f7cf2, type: 3}
+  winScreen: {fileID: 0}
+--- !u!114 &6598922943096214013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184812815369933328}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 774b87f44f80f4cddb48b50c3cac6ef6, type: 3}
   m_Name: 
@@ -192,3 +210,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8950420484752856690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184812815369933328}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8299f5dc57b4364b9bc0f94b31a7f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4264482932941392077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184812815369933328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96950725846d4d12873e151af1fbcdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
+  heart: {fileID: 3024700637105221624, guid: 2f1eb484bd7f346aeba16eeba68f7cf2, type: 3}
+  EnemyProjectile: {fileID: 8228753696869394287, guid: 9850c2e17e2194604b6785e86356b8aa, type: 3}
