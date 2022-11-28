@@ -7,7 +7,7 @@ public class Boss : Enemy
 {
     public override void Awake()
     {
-        this.GetComponent<Enemy>().hp = 150;
+        this.GetComponent<Enemy>().hp = 500;
         base.Awake();
     }
 }

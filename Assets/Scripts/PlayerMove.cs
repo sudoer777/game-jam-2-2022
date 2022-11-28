@@ -92,7 +92,7 @@ public class PlayerMove : MonoBehaviour
                 }
             }
         }
-        rb.velocity = move*actualSpeed;
+        rb.velocity = move*(actualSpeed*(staminaCap/2.0f));
 
         StaminaBar.Instance.SetStamina(stamina/staminaCap);
 
@@ -190,7 +190,7 @@ public class PlayerMove : MonoBehaviour
     }
 
     public void DebuffStamina() {
-        staminaCap *= 0.65f;
+        staminaCap *= 0.85f;
         if (stamina > staminaCap) {
             stamina = staminaCap;
         }
