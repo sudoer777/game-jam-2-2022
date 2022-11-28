@@ -25,6 +25,8 @@ public class EnemyProjectile : Projectile
         }
         else if (collision.transform.tag == "Wall") {
             Destroy(this.gameObject);
+        } else {
+            
         }
     }
 

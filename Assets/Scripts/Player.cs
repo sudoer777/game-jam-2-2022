@@ -13,6 +13,7 @@ public class Player : MonoBehaviour {
     public float power = 7; 
     public int gun = 0;
     public float gunStrength = 1;
+    //public List<GameObject> enemyList = new List<GameObject>();
 
     private void Awake() {
         if (_Player != null && _Player != this)
@@ -27,6 +28,13 @@ public class Player : MonoBehaviour {
         if (iframes > 0) {
             iframes -= Time.deltaTime;
         }
+        /*for (int i = 0; i < enemyList.Count; i++) {
+            if (enemyList[i] != null) {
+                if (Vector3.Distance(transform.position, enemyList[i].transform.position) <= 10f) {
+                    enemyList[i].SetActive(true);
+                }
+            }
+        }*/
     }
 
     public void Heal() {

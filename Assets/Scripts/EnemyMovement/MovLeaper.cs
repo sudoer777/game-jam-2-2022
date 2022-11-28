@@ -12,6 +12,9 @@ public class MovLeaper : Enemy
     
     public override void Update()
     {
+        if (Vector3.Distance(transform.position, Player.Instance.transform.position) >= 30f) {
+            return;
+        }
         if ((lifespan % 2) < 1.5 && ((lifespan + Time.deltaTime) % 2) > .75)
         {
             animator.Play("Ready");
@@ -28,6 +31,7 @@ public class MovLeaper : Enemy
         {
             animator.Play("Idle");
         }
+        base.Update();
     }
     public void UpdateLifespan() {
         lifespan += Time.deltaTime;
