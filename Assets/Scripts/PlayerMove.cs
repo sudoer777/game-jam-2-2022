@@ -13,8 +13,8 @@ public class PlayerMove : MonoBehaviour
     private int hor_input = 0;
     private int ver_input = 0;
     private float actualSpeed = 6.0f;
-    private float playerSpeed = 6.0f;
-    private float playerSprintSpeed = 12.0f;
+    private float playerSpeed = 8.0f;
+    private float playerSprintSpeed = 14.0f;
     private float stamina = 2.0f;
     private float staminaCap = 2.0f;
     private float shotcooldown = 0f;
