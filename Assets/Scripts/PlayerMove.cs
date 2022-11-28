@@ -113,7 +113,7 @@ public class PlayerMove : MonoBehaviour
                     Vector3 direction = new Vector3(Mathf.Cos(ang), Mathf.Sin(ang), 0);
                     var projectile = Instantiate(Projectile0, transform.position+direction*0.4f + projectileOffset, transform.rotation);
                     projectile.Fire(playerProjectileSpeed, direction);
-                    shotcooldown = 0.2f;
+                    shotcooldown = 0.2f * Player.Instance.cooldownMtpr;
                     PlayerAudio.clip = Projectile4Audio;
                 } else if (Player.Instance.gun == 1) {
                     float playerProjectileSpeed = 36f;
@@ -122,7 +122,7 @@ public class PlayerMove : MonoBehaviour
                         Vector3 direction = new Vector3(Mathf.Cos(angle+i/3), Mathf.Sin(angle+i/3), 0);
                         var projectile = Instantiate(Projectile1, transform.position+direction*0.3f + projectileOffset, transform.rotation);
                         projectile.Fire(playerProjectileSpeed, direction);
-                        shotcooldown = 0.4f;
+                        shotcooldown = 0.4f * Player.Instance.cooldownMtpr;
                     }
                     PlayerAudio.clip = Projectile1Audio;
                 } else if (Player.Instance.gun == 2) {
@@ -131,7 +131,7 @@ public class PlayerMove : MonoBehaviour
                         Vector3 direction = new Vector3(Mathf.Cos(ang), Mathf.Sin(ang), 0);
                         var projectile = Instantiate(Projectile2, transform.position+direction*0.3f + projectileOffset, transform.rotation);
                         projectile.Fire(playerProjectileSpeed, direction);
-                        shotcooldown = 0.3f;
+                        shotcooldown = 0.3f * Player.Instance.cooldownMtpr;
                     }
                     PlayerAudio.clip = Projectile2Audio;
                 } else if (Player.Instance.gun == 3) {
@@ -141,7 +141,7 @@ public class PlayerMove : MonoBehaviour
                             Vector3 direction = new Vector3(Mathf.Cos(ang+j/2), Mathf.Sin(ang+j/2), 0);
                             var projectile = Instantiate(Projectile3, transform.position+direction*0.3f + projectileOffset, transform.rotation);
                             projectile.Fire(playerProjectileSpeed, direction);
-                            shotcooldown = 0.3f;
+                            shotcooldown = 0.3f * Player.Instance.cooldownMtpr;
                         }
                     }
                     PlayerAudio.clip = Projectile3Audio;
@@ -150,7 +150,7 @@ public class PlayerMove : MonoBehaviour
                     Vector3 direction = new Vector3(Mathf.Cos(ang), Mathf.Sin(ang), 0);
                     var projectile = Instantiate(Projectile4, transform.position+direction*0.3f + projectileOffset, transform.rotation);
                     projectile.Fire(playerProjectileSpeed, direction);
-                    shotcooldown = 0.5f;
+                    shotcooldown = 0.5f * Player.Instance.cooldownMtpr;
                     PlayerAudio.clip = Projectile4Audio;
                 }
                 PlayerAudio.Play();
@@ -190,7 +190,7 @@ public class PlayerMove : MonoBehaviour
     }
 
     public void DebuffStamina() {
-        staminaCap *= 0.8f;
+        staminaCap *= 0.65f;
         if (stamina > staminaCap) {
             stamina = staminaCap;
         }
