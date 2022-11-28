@@ -7,9 +7,11 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] public float hp;
 
     protected Rigidbody2D rb;
+    public GameObject heart;
 
     public virtual void Awake()
-    {
+    {   
+        heart = (GameObject) Resources.Load("HealthPickup");//heart = LoadPrefabFromFile("HealthPickup");
         rb = GetComponent<Rigidbody2D>();
     }
     //this.GetComponent<Enemy>().hp = 20 is the way to set HP in a subclass
@@ -19,7 +21,10 @@ public abstract class Enemy : MonoBehaviour
     public virtual void OnHit(float damage) {
         hp -= damage;
         if (hp <= 0) {
-            Destroy(this.gameObject);
+            if (Random.Range(0, 1) < 0.2f) { 
+                heart = Instantiate(heart, transform.position, Quaternion.identity);
+            }
+            Destroy(this.gameObject);   
         }
     }
 
